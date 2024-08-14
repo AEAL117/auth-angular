@@ -1,0 +1,65 @@
+<div class ="container">
+    <div class = "card">
+        <h3 class="text-center"> Listado de usuarios</h3>
+        <div class = "card-body">
+            <table class="table table-striped">
+                <thead>
+                    <th>Id</th>
+                    <th>User Name</th>
+                    <th> First Name</th>
+                    <th> Last Name</th>
+                    <th> Email </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td> {{ user.id}}</td>
+                        <td> {{ user.username}}</td>
+                        <td> {{ user.firstName}}</td>
+                        <td> {{ user.lastName}}</td>
+                        <td> {{ user.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h3>Nuevo cliente</h3>
+    <form class="form-row">
+        <div class="form-group col-md-2">           
+            <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control" [(ngModel)]="nombreImput">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control" [(ngModel)]="apellidoImput">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="text" name="email" id="email" placeholder="email" class="form-control" [(ngModel)]="email">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="text" name="username" id="username" placeholder="username" class="form-control" [(ngModel)]="userName">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="password" name="password" id="password" placeholder="password" class="form-control" [(ngModel)]="password">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="agregarPersona()">
+                  Agregar
+            </button>
+        </div>
+      </form>
+</div>
+
+<div class="container">
+    <h3>Buscar cliente</h3>
+    <form class="form-row">
+        <div class="form-group col-md-2">
+            <input type="text" name="username" id="username" placeholder="username" class="form-control" [(ngModel)]="userName">
+        </div>
+        
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="findUser()">
+                  Obtener detalle
+            </button>
+        </div>
+      </form>
+</div>
