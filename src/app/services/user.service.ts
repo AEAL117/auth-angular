@@ -25,7 +25,7 @@ export class UserService {
   getUsers(token: string ): Observable<any[]>{
 
     //console.log(token)
-    console.log(this.csrfToken)
+    console.log("CSRF: ",this.csrfToken)
     const headers = {"Access-Control-Allow-Origin": "http://localhost:4200",'Authorization': `Bearer ${token}`,"X-XSRF-TOKEN": this.csrfToken }
     //const headers = {'Authorization': `Bearer ${token}`}
     return this.http.get<any[]>("http://localhost:8080/keycloak/user/search",  {headers,withCredentials: true}

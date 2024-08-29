@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Injectable, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, Injectable, OnInit } from '@angular/core';
 import { User } from './user.model';
 import { UserService } from '../services/user.service';
 import { AuthService } from '../authentication/auth.service';
@@ -33,6 +33,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
    
+    this.userService.getCsrf();
    this.userService.getUsers(this.authServer.getAccessToken()).subscribe((data) => this.users = data);
    
 
@@ -53,8 +54,10 @@ export class UserComponent implements OnInit {
   updateTable() {
     this.userService.getUsers(this.authServer.getAccessToken()).subscribe((data) => {
       this.users = data
-      this.cdr.detectChanges();
+      
     });
+
+    this.cdr.detectChanges();
   }
 
   findUser(){

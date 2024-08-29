@@ -18,6 +18,8 @@ export class AuthGuard extends KeycloakAuthGuard {
     state: RouterStateSnapshot
   ): Promise<boolean> {
 
+
+  
    
     let authenticated = this.keycloak.getKeycloakInstance().authenticated;
     if (!authenticated) {

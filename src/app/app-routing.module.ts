@@ -15,7 +15,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'secured',
+    path: 'api/secured',
     canActivate: [isAuthenticated],
     component: SecuredComponent,
     pathMatch: 'full'

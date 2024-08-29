@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService,
               private sanitizer: DomSanitizer,
               private registry: MatIconRegistry) {
-    this.kachel.iconName = 'login-variant';
-    this.registry.addSvgIcon('login-variant', sanitizer.bypassSecurityTrustResourceUrl('./assets/icons/login-variant.svg'))
+   // this.kachel.iconName = 'login-variant';
+   // this.registry.addSvgIcon('login-variant', sanitizer.bypassSecurityTrustResourceUrl('./assets/icons/login-variant.svg'))
   }
 
   login(): void {
